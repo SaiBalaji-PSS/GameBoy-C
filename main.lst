@@ -1,0 +1,272 @@
+                              1 ;--------------------------------------------------------
+                              2 ; File Created by SDCC : FreeWare ANSI-C Compiler
+                              3 ; Version 2.2.1 Sat Sep 26 14:36:54 2020
+                              4 
+                              5 ;--------------------------------------------------------
+                              6 	.module lcc8320
+                              7 	
+                              8 ;--------------------------------------------------------
+                              9 ; Public variables in this module
+                             10 ;--------------------------------------------------------
+                             11 	.globl _main
+                             12 	.globl _printf
+                             13 	.globl _main
+                             14 ;--------------------------------------------------------
+                             15 ; Externals used
+                             16 ;--------------------------------------------------------
+                             17 	.globl _IE_REG
+                             18 	.globl _SVBK_REG
+                             19 	.globl _OCPD_REG
+                             20 	.globl _OCPS_REG
+                             21 	.globl _BCPD_REG
+                             22 	.globl _BCPS_REG
+                             23 	.globl _RP_REG
+                             24 	.globl _HDMA5_REG
+                             25 	.globl _HDMA4_REG
+                             26 	.globl _HDMA3_REG
+                             27 	.globl _HDMA2_REG
+                             28 	.globl _HDMA1_REG
+                             29 	.globl _VBK_REG
+                             30 	.globl _KEY1_REG
+                             31 	.globl _WX_REG
+                             32 	.globl _WY_REG
+                             33 	.globl _OBP1_REG
+                             34 	.globl _OBP0_REG
+                             35 	.globl _BGP_REG
+                             36 	.globl _DMA_REG
+                             37 	.globl _LYC_REG
+                             38 	.globl _LY_REG
+                             39 	.globl _SCX_REG
+                             40 	.globl _SCY_REG
+                             41 	.globl _STAT_REG
+                             42 	.globl _LCDC_REG
+                             43 	.globl _NR52_REG
+                             44 	.globl _NR51_REG
+                             45 	.globl _NR50_REG
+                             46 	.globl _NR44_REG
+                             47 	.globl _NR43_REG
+                             48 	.globl _NR42_REG
+                             49 	.globl _NR41_REG
+                             50 	.globl _NR34_REG
+                             51 	.globl _NR33_REG
+                             52 	.globl _NR32_REG
+                             53 	.globl _NR31_REG
+                             54 	.globl _NR30_REG
+                             55 	.globl _NR24_REG
+                             56 	.globl _NR23_REG
+                             57 	.globl _NR22_REG
+                             58 	.globl _NR21_REG
+                             59 	.globl _NR14_REG
+                             60 	.globl _NR13_REG
+                             61 	.globl _NR12_REG
+                             62 	.globl _NR11_REG
+                             63 	.globl _NR10_REG
+                             64 	.globl _IF_REG
+                             65 	.globl _TAC_REG
+                             66 	.globl _TMA_REG
+                             67 	.globl _TIMA_REG
+                             68 	.globl _DIV_REG
+                             69 	.globl _SC_REG
+                             70 	.globl _SB_REG
+                             71 	.globl _P1_REG
+                             72 	.globl __io_out
+                             73 	.globl __io_in
+                             74 	.globl __io_status
+                             75 	.globl _sys_time
+                             76 	.globl __cpu
+                             77 ;--------------------------------------------------------
+                             78 ; special function registers
+                             79 ;--------------------------------------------------------
+                             80 ;--------------------------------------------------------
+                             81 ; special function bits 
+                             82 ;--------------------------------------------------------
+                             83 ;--------------------------------------------------------
+                             84 ; internal ram data
+                             85 ;--------------------------------------------------------
+                             86 	.area _DATA
+                             87 ;--------------------------------------------------------
+                             88 ; overlayable items in internal ram 
+                             89 ;--------------------------------------------------------
+                             90 	.area _OVERLAY
+                             91 ;--------------------------------------------------------
+                             92 ; indirectly addressable internal ram data
+                             93 ;--------------------------------------------------------
+                             94 	.area _ISEG
+                             95 ;--------------------------------------------------------
+                             96 ; bit data
+                             97 ;--------------------------------------------------------
+                             98 	.area _BSEG
+                             99 ;--------------------------------------------------------
+                            100 ; external ram data
+                            101 ;--------------------------------------------------------
+                            102 	.area _XSEG
+                            103 ;--------------------------------------------------------
+                            104 ; global & static initialisations
+                            105 ;--------------------------------------------------------
+                            106 	.area _GSINIT
+                            107 	.area _GSFINAL
+                            108 	.area _GSINIT
+                            109 ;--------------------------------------------------------
+                            110 ; Home
+                            111 ;--------------------------------------------------------
+                            112 	.area _HOME
+                            113 	.area _CODE
+                            114 ;--------------------------------------------------------
+                            115 ; code
+                            116 ;--------------------------------------------------------
+                            117 	.area _CODE
+                            118 ;	main.c 4
+                            119 ; genLabel
+                            120 ; genFunction
+                            121 ;	---------------------------------
+                            122 ; Function main
+                            123 ; ---------------------------------
+   0000                     124 ___main_start:
+   0000                     125 _main:
+   0000 C5                  126 	push	bc
+   0001 E8 FE               127 	lda	sp,-2(sp)
+                            128 ;	main.c 8
+                            129 ; genAssign
+   0003 01 01 00            130 	ld	bc,#0x0001
+                            131 ; genLabel
+   0006                     132 00101$:
+                            133 ; genCmpLt
+   0006 59                  134 	ld	e,c
+   0007 78                  135 	ld	a,b
+   0008 EE 80               136 	xor	a,#0x80
+   000A 57                  137 	ld	d,a
+   000B 21 F5 7F            138 	ld	hl,#0x7FF5
+   000E 19                  139 	add	hl,de
+   000F DA 35 00            140 	jp	c,00105$
+                            141 ;	main.c 10
+                            142 ; genLeftShift
+                            143 ; AOP_STK for _main_sloc0_1_0
+   0012 F8 00               144 	lda	hl,0(sp)
+   0014 71                  145 	ld	(hl),c
+   0015 23                  146 	inc	hl
+   0016 70                  147 	ld	(hl),b
+   0017 B7                  148 	or	a,a
+   0018 2B                  149 	dec	hl
+   0019 CB 16               150 	rl	(hl)
+   001B 23                  151 	inc	hl
+   001C CB 16               152 	rl	(hl)
+                            153 ; genIpush
+                            154 ; AOP_STK for _main_sloc0_1_0
+   001E 2B                  155 	dec	hl
+   001F 2A                  156 	ld	a,(hl+)
+   0020 66                  157 	ld	h,(hl)
+   0021 6F                  158 	ld	l,a
+   0022 E5                  159 	push	hl
+                            160 ; genIpush
+   0023 21 02 00            161 	ld	hl,#0x0002
+   0026 E5                  162 	push	hl
+                            163 ; genIpush
+   0027 C5                  164 	push	bc
+                            165 ; genIpush
+   0028 21 39 00            166 	ld	hl,#__str_0 + 0
+   002B E5                  167 	push	hl
+                            168 ; genCall
+   002C CD 00 00            169 	call	_printf
+   002F E8 08               170 	lda	sp,8(sp)
+                            171 ;	main.c 8
+                            172 ; genPlus
+                            173 ; genPlusIncr
+   0031 03                  174 	inc	bc
+                            175 ; genGoto
+   0032 C3 06 00            176 	jp	00101$
+                            177 ; genLabel
+   0035                     178 00105$:
+                            179 ; genEndFunction
+   0035 E8 02               180 	lda	sp,2(sp)
+   0037 C1                  181 	pop	bc
+   0038 C9                  182 	ret
+   0039                     183 ___main_end:
+   0039                     184 __str_0:
+   0039 25 64 20 58 20 25   185 	.ascii "%d X %d = %d"
+        64 20 3D 20 25 64
+   0045 0A                  186 	.db 0x0A
+   0046 00                  187 	.db 0x00
+                            188 	.area _CODE
+ASxxxx Assembler V01.75  (GameBoy Z80-like CPU), page 1.
+
+Symbol Table
+
+    _BCPD_REG                          **** GX
+    _BCPS_REG                          **** GX
+    _BGP_REG                           **** GX
+    _DIV_REG                           **** GX
+    _DMA_REG                           **** GX
+    _HDMA1_REG                         **** GX
+    _HDMA2_REG                         **** GX
+    _HDMA3_REG                         **** GX
+    _HDMA4_REG                         **** GX
+    _HDMA5_REG                         **** GX
+    _IE_REG                            **** GX
+    _IF_REG                            **** GX
+    _KEY1_REG                          **** GX
+    _LCDC_REG                          **** GX
+    _LYC_REG                           **** GX
+    _LY_REG                            **** GX
+    _NR10_REG                          **** GX
+    _NR11_REG                          **** GX
+    _NR12_REG                          **** GX
+    _NR13_REG                          **** GX
+    _NR14_REG                          **** GX
+    _NR21_REG                          **** GX
+    _NR22_REG                          **** GX
+    _NR23_REG                          **** GX
+    _NR24_REG                          **** GX
+    _NR30_REG                          **** GX
+    _NR31_REG                          **** GX
+    _NR32_REG                          **** GX
+    _NR33_REG                          **** GX
+    _NR34_REG                          **** GX
+    _NR41_REG                          **** GX
+    _NR42_REG                          **** GX
+    _NR43_REG                          **** GX
+    _NR44_REG                          **** GX
+    _NR50_REG                          **** GX
+    _NR51_REG                          **** GX
+    _NR52_REG                          **** GX
+    _OBP0_REG                          **** GX
+    _OBP1_REG                          **** GX
+    _OCPD_REG                          **** GX
+    _OCPS_REG                          **** GX
+    _P1_REG                            **** GX
+    _RP_REG                            **** GX
+    _SB_REG                            **** GX
+    _SCX_REG                           **** GX
+    _SCY_REG                           **** GX
+    _SC_REG                            **** GX
+    _STAT_REG                          **** GX
+    _SVBK_REG                          **** GX
+    _TAC_REG                           **** GX
+    _TIMA_REG                          **** GX
+    _TMA_REG                           **** GX
+    _VBK_REG                           **** GX
+    _WX_REG                            **** GX
+    _WY_REG                            **** GX
+  0 ___main_end                        0039 R
+  0 ___main_start                      0000 R
+    __cpu                              **** GX
+    __io_in                            **** GX
+    __io_out                           **** GX
+    __io_status                        **** GX
+  0 __str_0                            0039 R
+  0 _main                              0000 GR
+    _printf                            **** GX
+    _sys_time                          **** GX
+
+ASxxxx Assembler V01.75  (GameBoy Z80-like CPU), page 2.
+
+Area Table
+
+   0 _CODE                              size   47   flags 0
+   1 _DATA                              size    0   flags 0
+   2 _OVERLAY                           size    0   flags 0
+   3 _ISEG                              size    0   flags 0
+   4 _BSEG                              size    0   flags 0
+   5 _XSEG                              size    0   flags 0
+   6 _GSINIT                            size    0   flags 0
+   7 _GSFINAL                           size    0   flags 0
+   8 _HOME                              size    0   flags 0
